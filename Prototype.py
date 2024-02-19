@@ -15,13 +15,13 @@ f1.pack()
 L1 = tk.Label(f1,bg="red")
 L1.pack()
 stream = cv2.VideoCapture(0)
-Button = tk.Button(root, text="Capture a Picture", command=capture_image)
+Button = tk.Button(root, text="Capture a Picture", command=capture_image())
 Button.pack()
 
 while True:
 
-    img = stream.read()[1]
-    img = cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
-    img = ImageTk.PhotoImage(Image.fromarray(img))
-    L1["image"] = img
-    root.update()
+        img = stream.read()[1]
+        img = cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
+        img = ImageTk.PhotoImage(Image.fromarray(img))
+        L1["image"] = img
+        root.update()
