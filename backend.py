@@ -10,6 +10,7 @@ def capture_image():
 
         cv2.imshow("Webcam", frame)
         cv2.waitKey()
+        cv2.destroyAllWindows()
 
         image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         image = Image.fromarray(image)
