@@ -6,7 +6,7 @@ import torch
 import cv2
 
 def capture_image():
-        vidcap = cv2.VideoCapture(0)
+        vidcap = cv2.VideoCapture(1)
 
         success, frame = vidcap.read()
 
@@ -41,7 +41,7 @@ placeholder = "Nehmen sie ein Bild auf um die KI zu testen :)"
 root = tk.Tk()
 root.geometry("1080x720")
 root.configure(bg="black")
-root.title("KI Bilderkennung")
+root.title("KI-Bilderkennung")
 displaytext = tk.StringVar()
 displaytext.set(placeholder)
 
@@ -49,6 +49,6 @@ label = tk.Label(root, text="KI Bilderkennung", font=("Arial", 20), bg="black", 
 label.pack(pady=20)
 out = tk.Label(root, textvariable=displaytext, font=("Arial", 20), bg="black", fg="white")
 out.pack(pady=20)
-Capturebutton = tk.Button(root, text="Capture a Picture", command=lambda:capture_image())
+Capturebutton = tk.Button(root, text="Bild aufnehmen", command=lambda:capture_image())
 Capturebutton.pack(padx=10, pady=100)
 root.mainloop()
